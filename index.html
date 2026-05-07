@@ -22,6 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500;700&family=DM+Sans:wght@300;400;500&family=Scheherazade+New:wght@400;700&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js"></script>
+<script>window.addEventListener("load",function(){if(window.emailjs)emailjs.init("CmUgdkq-roReWdV1O");});</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -173,13 +174,13 @@ body{font-family:var(--fb);background:var(--bg1);color:var(--tx);line-height:1.7
 .rv.vis{opacity:1;transform:translateY(0)}
 
 /* ===== NAVBAR (bigger) ===== */
-.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:14px 0;transition:all .35s}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:14px 0;transition:all .35s;background:linear-gradient(to bottom,rgba(0,0,0,.22) 0%,transparent 100%)}
 .navbar.scrolled{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-bdr);padding:8px 0}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 clamp(16px,3vw,32px)}
 .nav-logo img{height:48px;width:auto;transition:all .3s;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}@media(min-width:900px){.nav-logo img{height:58px}}
 .navbar.scrolled .nav-logo img{height:38px}
 .nav-links{display:flex;gap:clamp(18px,2.5vw,30px);align-items:center}
-.nav-links a{color:rgba(255,255,255,.88);font-size:15px;font-weight:500;transition:color .3s;position:relative}
+.nav-links a{color:rgba(255,255,255,.93);font-size:15px;font-weight:500;letter-spacing:.01em;transition:color .3s;position:relative;text-shadow:0 1px 8px rgba(0,0,0,.9),0 0 20px rgba(0,0,0,.8)}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold2);transition:width .35s ease}
 .nav-links a:hover{color:var(--gold2)}.nav-links a:hover::after{width:100%}
 .nav-actions{display:flex;align-items:center;gap:10px}
@@ -209,7 +210,7 @@ body{font-family:var(--fb);background:var(--bg1);color:var(--tx);line-height:1.7
 [data-shadow="ultralight"] .stat-l,[data-shadow="light"] .stat-l{color:#e8f5f0;text-shadow:0 1px 8px rgba(0,0,0,1),0 0 20px rgba(0,0,0,.95)}
 [data-shadow="ultralight"] .stat-n,[data-shadow="light"] .stat-n{filter:drop-shadow(0 2px 10px rgba(0,0,0,1)) drop-shadow(0 0 24px rgba(0,0,0,.95))}
 [data-shadow="light"] .hero-overlay{background:radial-gradient(ellipse 70% 55% at 50% 38%,rgba(0,0,0,.0) 0%,rgba(0,0,0,.12) 50%,rgba(0,0,0,.30) 100%)}
-[data-shadow="soft"] .hero-overlay{background:radial-gradient(ellipse 70% 55% at 50% 38%,rgba(0,0,0,.0) 0%,rgba(0,0,0,.18) 50%,rgba(0,0,0,.42) 100%)}[data-shadow="soft"] .navbar:not(.scrolled) .nav-links a{text-shadow:0 1px 8px rgba(0,0,0,.9),0 0 16px rgba(0,0,0,.7)}
+[data-shadow="soft"] .hero-overlay{background:radial-gradient(ellipse 70% 55% at 50% 38%,rgba(0,0,0,.0) 0%,rgba(0,0,0,.09) 50%,rgba(0,0,0,.26) 100%)}[data-shadow="soft"] .navbar:not(.scrolled) .nav-links a{text-shadow:0 1px 12px rgba(0,0,0,1),0 0 28px rgba(0,0,0,1)}
 [data-shadow="mild"] .hero-overlay{background:radial-gradient(ellipse 70% 55% at 50% 38%,rgba(0,0,0,.01) 0%,rgba(0,0,0,.24) 50%,rgba(0,0,0,.52) 100%)}
 [data-shadow="medium"] .hero-overlay{background:radial-gradient(ellipse 70% 55% at 50% 38%,rgba(0,0,0,.01) 0%,rgba(0,0,0,.30) 50%,rgba(0,0,0,.62) 100%),radial-gradient(ellipse 55% 45% at 50% 36%,rgba(255,255,255,.05) 0%,transparent 55%)}
 [data-shadow="dark"] .hero-overlay{background:radial-gradient(ellipse 80% 65% at 50% 40%,rgba(0,0,0,.10) 0%,rgba(0,0,0,.52) 55%,rgba(0,0,0,.82) 100%)}
@@ -218,7 +219,7 @@ body{font-family:var(--fb);background:var(--bg1);color:var(--tx);line-height:1.7
 .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:100px;border:1px solid rgba(212,175,55,.45);background:rgba(0,0,0,.45);backdrop-filter:blur(8px);color:var(--gold2);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
 .live-dot{width:7px;height:7px;background:var(--ac2);border-radius:50%;animation:pulse 1.6s ease-in-out infinite;flex-shrink:0}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 var(--glow)}50%{box-shadow:0 0 0 8px transparent}}
-.hero-title{font-family:var(--fd);font-size:clamp(1.45rem,7.8vw,4.6rem);font-weight:700;line-height:1.12;margin-bottom:24px;white-space:normal;position:relative}.hero-title::before{content:'';position:absolute;inset:-24px -40px;background:radial-gradient(ellipse 90% 70% at 50% 50%,rgba(0,0,0,.55) 0%,transparent 70%);z-index:-1;pointer-events:none;border-radius:12px}
+.hero-title{font-family:var(--fd);font-size:clamp(1.45rem,7.8vw,4.6rem);font-weight:700;line-height:1.12;margin-bottom:24px;white-space:normal;position:relative}.hero-title::before{content:'';position:absolute;inset:-24px -40px;background:radial-gradient(ellipse 90% 70% at 50% 50%,rgba(0,0,0,.32) 0%,transparent 70%);z-index:-1;pointer-events:none;border-radius:12px}
 .hero-title .l1{display:block;color:#dcb36d;filter:drop-shadow(0 3px 12px rgba(0,0,0,1)) drop-shadow(0 0 28px rgba(0,0,0,.9));white-space:nowrap}.hero-title .l1::after{content:'';display:block;margin:6px auto 0;width:clamp(40px,8vw,80px);height:1.5px;background:linear-gradient(90deg,transparent,rgba(220,179,109,.7) 30%,rgba(220,179,109,.7) 70%,transparent)}
 .hero-title .l2{display:block;background-image:linear-gradient(180deg,#fff3de 0%,#cba057 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap;padding-bottom:0.15em;filter:drop-shadow(0 3px 12px rgba(0,0,0,.95)) drop-shadow(0 0 24px rgba(0,0,0,.8))}
 .hero-sub{font-size:clamp(.92rem,1.5vw,1.12rem);color:#e5e7eb;max-width:520px;margin:0 auto 36px;font-weight:400;line-height:1.7;text-shadow:0 2px 4px rgba(0,0,0,0.8)}
@@ -2348,6 +2349,93 @@ document.querySelectorAll('.fb').forEach(card=>{
   });
 })();
 document.querySelectorAll('[data-fb]').forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.fb;document.documentElement.setAttribute('data-footer-border',v);document.querySelectorAll('[data-fb]').forEach(x=>x.classList.toggle('on',x.dataset.fb===v))}));
+</script>
+
+<style>
+/* ===== WA FLOAT BUTTON ===== */
+.wa-float{
+  position:fixed;bottom:26px;right:26px;z-index:9999;
+  display:block;
+  width:52px;height:52px;
+  border-radius:50%;
+  text-decoration:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.45);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.wa-float:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 22px rgba(0,0,0,.55);
+}
+.wa-float svg{width:52px;height:52px;display:block}
+@media(max-width:600px){
+  .wa-float{bottom:18px;right:16px;width:46px;height:46px}
+  .wa-float svg{width:46px;height:46px}
+}
+</style>
+
+<a href="https://wa.me/916235881968?text=Assalamu%20Alaikum%2C%20I%20am%20interested%20in%20joining%20Al%20Kanz%20Academy%20for%20Quran%20classes." target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="wa-float" id="waFloatBtn">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+    <!-- outer dark ring for depth -->
+    <circle cx="24" cy="24" r="24" fill="rgba(0,0,0,0.18)"/>
+    <!-- green background -->
+    <circle cx="24" cy="24" r="22" fill="#25D366"/>
+    <!-- white speech bubble + phone -->
+    <path d="M24 10.4C16.5 10.4 10.4 16.5 10.4 24c0 2.4.65 4.65 1.78 6.58L10.4 37.6l7.18-1.76A13.47 13.47 0 0 0 24 37.6c7.5 0 13.6-6.1 13.6-13.6S31.5 10.4 24 10.4z" fill="white"/>
+    <path d="M24 12.8c-6.18 0-11.2 5.02-11.2 11.2 0 2.08.57 4.03 1.57 5.7l-1.03 3.75 3.85-1c1.6.93 3.45 1.47 5.41 1.47A11.2 11.2 0 0 0 35.2 24c0-6.18-5.02-11.2-11.2-11.2z" fill="#25D366"/>
+    <path d="M29.8 26.88c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.14-.68.15-.2.28-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.14-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.62-.93-2.22-.24-.58-.49-.5-.68-.51h-.58c-.2 0-.52.07-.79.37-.28.3-1.04 1.01-1.04 2.46 0 1.46 1.07 2.86 1.21 3.06.15.2 2.08 3.18 5.06 4.46.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.07-.13-.27-.2-.57-.35z" fill="white"/>
+  </svg>
+</a>
+
+<script>
+(function(){
+  /* geo fetch — runs once on load */
+  var _geo = {ip:'Unknown',country:'Unknown'};
+  fetch('https://ipapi.co/json/',{cache:'no-store'})
+    .then(function(r){return r.json();})
+    .then(function(d){_geo={ip:d.ip||'Unknown',country:d.country_name||d.country||'Unknown'};})
+    .catch(function(){});
+
+  /* central mailer — safe, never throws to caller */
+  window._sendLead = function(source, data){
+    try{
+      if(typeof emailjs==='undefined') return;
+      var g = _geo;
+      var msg = 'Source: ' + source + '\nIP: ' + g.ip + '\nCountry (IP): ' + g.country;
+      if(data){
+        if(data.name)    msg += '\n\nName: '    + data.name;
+        if(data.country) msg += '\nCountry: '   + data.country;
+        if(data.age)     msg += '\nAge: '       + data.age;
+        if(data.level)   msg += '\nLevel: '     + data.level;
+        if(data.phone)   msg += '\nPhone: '     + data.phone;
+        if(data.msg)     msg += '\nMessage: '   + data.msg;
+      }
+      emailjs.send('service_c4dbq1v','template_xs07x2d',{
+        name: (data && data.name) || 'Visitor',
+        email: 'Not provided',
+        title: 'Lead: ' + source + ((data && data.name) ? ' — ' + data.name : ''),
+        time: new Date().toUTCString(),
+        message: msg
+      });
+    }catch(e){}
+  };
+
+  /* hero WA button */
+  document.querySelectorAll('.btn-wa').forEach(function(el){
+    el.addEventListener('click', function(){ window._sendLead('Hero WA Button', null); });
+  });
+  /* tilt card WA button */
+  document.querySelectorAll('.tilt-buy').forEach(function(el){
+    el.addEventListener('click', function(){ window._sendLead('Tilt Card WA Button', null); });
+  });
+  /* float button */
+  var fb = document.getElementById('waFloatBtn');
+  if(fb) fb.addEventListener('click', function(){ window._sendLead('Float WA Button', null); });
+  /* nav enroll */
+  document.querySelectorAll('.nav-cta').forEach(function(el){
+    if(el.href && el.href.indexOf('wa.me') > -1)
+      el.addEventListener('click', function(){ window._sendLead('Nav Enroll Button', null); });
+  });
+})();
 </script>
 </body>
 </html>
